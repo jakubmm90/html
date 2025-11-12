@@ -1,0 +1,20 @@
+def czy_pierwsza(liczba):
+    if liczba < 2:
+        return False
+    for i in range(2, liczba):
+        if liczba % i == 0:
+            return False
+    return True
+
+try:
+    liczba = int(input("Podaj liczbę: "))
+    
+    if liczba == 0 or liczba == 1:
+        print(f"{liczba} nie jest liczbą pierwszą.")
+    else:
+        if czy_pierwsza(liczba):
+            print(f"{liczba} jest liczbą pierwszą.")
+        else:
+            print(f"{liczba} nie jest liczbą pierwszą.")
+except ValueError:
+    print("To nie jest poprawna liczba całkowita.")
